@@ -73,7 +73,7 @@ export const wall = () => {
         <button class="btn-delete" data-id="${doc.id}">
           <img src = "../Social-Images/delete-btn.png">
           </button>
-        <span id= "count" class = "count" data-id="${doc.id}"></span>
+        <span id= "count" class = "count" data-id="${doc.id}">${pub.PublicationLikes}</span>
         <button class="btn-like" data-id="${doc.id}">
         <img src = "../Social-Images/like-icon.png">
         </button>
