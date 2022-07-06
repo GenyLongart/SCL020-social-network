@@ -13,7 +13,7 @@ import {
   deleteDoc,
   getDoc,
   arrayRemove,
-  arrayUnion
+  arrayUnion,
 } from "../firebase-doc/firebase.js";
 console.log(addDoc);
 
@@ -50,6 +50,49 @@ const editingComment = async (id, Comment) => {
   });
 };
 
+const likingPub = async (id, UserId) => {
+  try {
+  const docRef = await doc(db, "Publications", id );
+  const hold = await getDoc(docRef);
+  if (hold.exists()) {
+  let PubLikes = hold.data().PublicationLikes;
+  let pubCount = hold.data().LikesSum;
+  if (!PubLikes.includes(UserId)){
+    await updateDoc(docRef,{
+    PublicationLikes: arrayUnion(UserId),
+    LikesSum: pubCount + 1,
+    });
+  } else {
+    await updateDoc(docRef, {
+      PublicationLikes: arrayRemove(UserId),
+      LikesSum: pubCount - 1,
+    })
+  }
+ } 
+  } catch (error) {
+    console.error("Error adding likes :(");
+    throw error.message;
+};
+};
+//   const publicationInfo = getDoc();
+//   console.log(publicationInfo);
+//   const arrUserLiked = publicationInfo.PublicationLikes;
+//   const likeCount = publicationInfo.LikesSum;
+//   if (arrUserLiked.includes(UserId)) {
+//     await updateDoc(publicationInfo.docRef, {
+//       PublicationLikes: arrayRemove(UserId),
+//       LikesSum: likeCount - 1,
+//     });
+//     return true;
+//   } else {
+//     // arrUserLiked: arrayUnion(userUid);
+//     await updateDoc(publicationInfo.docRef, {
+//       PublicationLikes: arrayUnion(UserId),
+//       LikesSum: likeCount + 1,
+//     });
+//     return false;
+//   }
+// };
 
 //Add and remove Likes
 /*const addLike = async (id, uid) => {
@@ -78,4 +121,4 @@ const editingPublication = async (id, Comment) => {
 };
 
 export { creatingNewPost, updatingPublications, editingPublication, deletingPublication,
-getPublication/*, addLike, removeLike*/, editingComment };
+getPublication, editingComment, likingPub };

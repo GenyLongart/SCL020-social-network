@@ -4,6 +4,7 @@ export const registration = () => {
   const register = //html
   `
     <div class="secondView">
+    <img class = "homePic" src = "Social-images/homePic.png">
       <div class = "logo">
         <img src = "Social-Images/logoNuevo.png">
       </div>
@@ -13,9 +14,8 @@ export const registration = () => {
       <input class="createPassword" type="password" placeholder="Crea tu contraseña">
       <button class="userRegistration" type="submit"><strong>REGISTRARME</strong></button>
       </form>
-      <p class= "question"><strong>¿Ya tienes cuenta?</strong></p>
+      <h3 class= "question"><strong>¿Ya tienes cuenta?</strong></h3>
       <a href="#/home" class = "registerlogIn"><strong>INICIAR SESIÓN</strong></a>
-      
     </div>
     `;
     const container = document.createElement('div');

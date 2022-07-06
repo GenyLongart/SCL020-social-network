@@ -1,9 +1,10 @@
 import {
   creatingNewPost,
-  updatingPublications , editingPublication ,
+  updatingPublications, editingPublication,
   deletingPublication,
   getPublication,
   editingComment,
+  likingPub,
 } from "../firebase-doc/firestore.js";
 import { logOut } from "../firebase-doc/authentication.js";
 import { auth, getDocs, collection, db, updateDoc } from "../firebase-doc/firebase.js";
@@ -24,8 +25,6 @@ export const wall = () => {
      <button class="publish" id="publish" type="submit"><strong>PUBLICAR</strong></button>
      </div>
      <div class= "wall" id="wall">
-
-     </div>
       </div>
       `;
   const container = document.createElement("div");
@@ -73,7 +72,7 @@ export const wall = () => {
         <button class="btn-delete" data-id="${doc.id}">
           <img src = "../Social-Images/delete-btn.png">
           </button>
-        <span id= "count" class = "count" data-id="${doc.id}">${pub.PublicationLikes}</span>
+        <span id= "count" class = "count" data-id="${doc.id}">${pub.LikesSum}</span>
         <button class="btn-like" data-id="${doc.id}">
         <img src = "../Social-Images/like-icon.png">
         </button>
@@ -98,51 +97,42 @@ export const wall = () => {
 //Que vuelva a su color normal si le quitan el like
 //Que la suma de likes se muestre en la interfaz al lado del botón
 
-const btnLikes = container.querySelectorAll('.btn-like');
-let count = container.querySelectorAll(".count");
-let clicked = false;
-btnLikes.forEach((btn) => {
-  // console.log(btn.dataset.id);
-  btn.addEventListener("click", (e) => {
-  count.forEach((coun) =>{
-    if ( btn.dataset.id === coun.dataset.id ){
-
-    if (!clicked) {
-    clicked = true;
-    coun.textContent++;
-    } else {
-    clicked = false;
-    coun.textContent--;
-    if ( coun.textContent === "0" ){
-      coun.textContent = "";
-      console.log ("hola");
-    }
-    }
-  }
-  });
-})
-})
-
+// const btnLikes = container.querySelectorAll('.btn-like');
+// let count = container.querySelectorAll(".count");
+// let clicked = false;
 // btnLikes.forEach((btn) => {
-//   btn.addEventListener("click", async (e) => {
-//     if (!clicked){
-//     click = true;
-//     count.textContent++;
+//   // console.log(btn.dataset.id);
+//   btn.addEventListener("click", (e) => {
+//   count.forEach((coun) =>{
+//     if ( btn.dataset.id === coun.dataset.id ){
+
+//     if (!clicked) {
+//     clicked = true;
+//     coun.textContent++;
 //     } else {
 //     clicked = false;
-//     count.textContent--;
+//     coun.textContent--;
+//     if ( coun.textContent === "0" ){
+//       coun.textContent = "";
+//       console.log ("hola");
 //     }
-//     });
+//     }
+//   }
+//   });
+// })
+// })
+
+const btnLikes = container.querySelectorAll('.btn-like');
+ let count = container.querySelectorAll(".count");
+ btnLikes.forEach((btn) => {
+  btn.addEventListener("click", async (e) => {
+    const postId = e.target.dataset.id;
+    await likingPub(postId, auth.currentUser.uid);
+  });
+
+ });
 
 
-    /*const btnLikes = container.querySelectorAll('.btn-like');
-    btnLikes.forEach(btn => {
-    btn.addEventListener('click', ({target: {dataset}}) => {
-        btn.classList.add('liked');
-        addLike(dataset.id);
-        console.log('jelou')
-      })
-    })*/
     
       const btnEdit = container.querySelectorAll(".btn-edit");
       btnEdit.forEach((btn) => {

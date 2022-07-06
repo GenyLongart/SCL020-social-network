@@ -6,16 +6,21 @@ export const home = () => {
   const viewHome = // html
   `
     <div class="firstView">
+    <img class = "homePic" src = "Social-images/homePic.png">
     <div class = "logo">
       <img src = "Social-images/logoNuevo.png">
     </div>
     <input class = "email" type="text" placeholder="Escribe tu correo">
     <input type = 'password'  class = "password" type="text" placeholder="Escribe tu contraseña">
     <button type = 'submit' class="loginButton"><strong>INICIAR SESIÓN</strong></button>
-    <p class="o"><strong>o</strong></p>
+    <h3 class="o"><strong>o</strong></h3>
     <button type='submit' class="loginGoogle"><strong>INICIAR SESIÓN CON GOOGLE</strong></button>
-    <p class="registerChoice"><strong>¿No tienes una cuenta?</strong></p>
+    <h3 class="registerChoice"><strong>¿No tienes una cuenta?</strong></h3>
     <a href="#/register" class="register"><strong>REGISTRATE</strong></a>
+    </div>
+    <div>
+    <footer>Copyright 2022 | Genesis Longart - Claudia Morales</footer>
+    </div>
     </div>
     `;
   const container = document.createElement('div');

@@ -28,7 +28,7 @@ export {
   updateProfile, sendEmailVerification, onAuthStateChanged,
   getRedirectResult, signInWithPopup, addDoc,
   collection, Timestamp, getDocs, updateDoc, doc, onSnapshot, query, orderBy, deleteDoc,
-   getDoc, arrayRemove, arrayUnion
+   getDoc, arrayRemove, arrayUnion,
 };
 
 
