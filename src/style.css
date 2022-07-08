@@ -333,13 +333,14 @@ header img{
     background-color:#09fada;
   }
 .publication-area{
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 textarea{
-    width: 300px;
+    width: 80%;
     height: 150px;
     margin-top: 20px;
     border: none;
@@ -387,7 +388,7 @@ div .wall{
 }
 .post{
         border: 1px solid black;
-        min-width: 300px;
+        width: 80%;
         min-height: 150px;
         border-radius: 10px;
         margin-top: 20px;
@@ -395,6 +396,9 @@ div .wall{
         justify-content: left;
         display: flex;
         flex-direction: column;
+}
+#publication{
+    width: 100%;
 }
 .post-header{
     padding: 0;
@@ -442,7 +446,7 @@ div .wall{
     pointer-events: none;
 }
 .btn-edit{
-    margin-left: 260px;
+    margin-left: 90%;
     margin-top: -30px;
     width: 16px;
     height: 16px;
@@ -478,7 +482,7 @@ div .wall{
     background-color: #ffffff;
 }
 .count{
-    margin-left: 220px;
+    margin-left: 75%;
 }
 .liked{
     background: purple;
@@ -507,103 +511,8 @@ div .wall{
     height: 18px;
     margin-top: 10px;
 }
-@media screen and (min-width:426px) and (max-width:767px){
-    .logo img{
-        width: 220px;
-        height: 220px;
-    
-    }
-    .email{
-        width: 290px;
-        padding: 15px;
-        margin-bottom: 25px;
-    }
-    .password{
-        width: 290px;
-        padding: 15px;
-        margin-bottom: 25px;
-    }
-    .loginButton{
-        width: 290px;
-        padding: 15px;
-        font-size: 18px;
-    }
-    .register{
-        width: 290px;
-        padding: 15px;
-        font-size: 18px;
-    }
-    .loginGoogle{
-        width: 290px;
-        padding: 15px;
-        font-size: 18px;
-    }
-    p{
-        padding: 15px;
-        font-size: 18px;
-    }
-    ::placeholder { color: White;
-        font-size: 20px;
-    }
-    .userName{
-        width: 290px;
-        padding: 15px;
-    }
-    .userEmail{
-        width: 290px;
-        padding: 15px;
-    }
-    .createPassword{
-        width: 290px;
-        padding: 15px;
-    }
-    .userRegistration {
-        width: 290px;
-        padding: 15px;
-        font-size: 18px;
-        margin-top: 10px;
-    }
-    .registerlogIn{
-        width: 290px;
-        padding: 15px;
-        font-size: 18px;
-    }
-    header img{
-        width: 60px;
-        height: 60px;
-    }
-    #bForm{
-        min-width: 100px;
-        font-size: 22px;
-    }
-    .logOutWall{
-        font-size: 22px;
-        margin-right: 20px;
-    }
-    #publication{
-        width: 550px;
-        height: 200px;
-    }
-    #publish{
-    width: 200px;
-    padding: 15px;
-    font-size: 18px;
-    margin-top: 15px;
-    }
-    .questionsB{
-    width: 600px;
-    }
-    .send{
-        width: 200px;
-        padding: 15px;
-        margin-top: 20px;
-        font-size: 18px;
-    }
-    .backToWall{
-        width: 60px;
-        font-size: 22px;
-        margin-right: 20px;
-    }
+.post-footer{
+    margin-bottom: 5px;
 }
 @media screen and (min-width:768px) and (max-width:1023px){
     .logo img{
@@ -687,20 +596,10 @@ div .wall{
         font-size: 22px;
         margin-right: 20px;
     }
-    #publication{
-        width: 550px;
-        height: 200px;
-        font-size: 22px;
-    }
     #publish{
     width: 200px;
     font-size: 18px;
     margin-top: 15px;
-    }
-    .post{
-        width: 550px;
-        height: 200px;
-        margin-bottom: 10px;
     }
     .comment{
      font-size: 22px;
@@ -710,6 +609,9 @@ div .wall{
     }
     .date{
         font-size: medium;
+    }
+    .post{
+        min-height: 180px;
     }
     .post-header img{
         width: 50px;
@@ -734,17 +636,6 @@ div .wall{
         width: 27px;
         height: 27px;
     }
-    .btn-like{
-        width: 27px;
-        height: 27px;
-    }
-    .count{
-        margin-left: 445px;
-    }
-    .btn-like img{
-        width: 27px;
-        height: 27px;
-    }
     .btn-delete{
         width: 27px;
         height: 27px;
@@ -752,6 +643,9 @@ div .wall{
     .btn-delete img{
         width: 27px;
         height: 27px;
+    }
+    .count{
+        margin-left: 82%;
     }
     .questionsB{
     width: 600px;
@@ -766,6 +660,7 @@ div .wall{
         font-size: 22px;
         margin-right: 20px;
     }
+    
 }
     @media (min-width: 1024px){
         #root{
@@ -787,52 +682,52 @@ div .wall{
             margin-top: 0px;
             margin-bottom: 3px;
         }
-         .logo img{
+        .logo img{
             width: 170px;
             height: 170px;
             margin-left: 600px;
             margin-bottom: 5px;
             }
-            .email{
+        .email{
                 width: 290px;
                 padding: 10px;
                 margin-bottom: 15px;
                 margin-left: 600px;
                 height: 42px;
             }
-            .password{
+        .password{
                 width: 290px;
                 padding: 10px;
                 margin-bottom: 15px;
                 margin-left: 600px;
                 height: 42px;
             }
-            .loginButton{
+        .loginButton{
                 width: 290px;
                 padding: 8px;
                 font-size: 18px;
                 margin-left: 600px;
             }
-            .register{
+        .register{
                 width: 290px;
                 padding: 8px;
                 font-size: 18px;
                 margin-left: 600px;
             }
-            .loginGoogle{
+        .loginGoogle{
                 width: 290px;
                 padding: 8px;
                 font-size: 18px;
                 margin-left: 600px;
             }
-            h3{
+        h3{
                 margin-left: 600px;
             }
-            p{
+        p{
                 padding: 5px;
                 font-size: 18px;
             }
-            footer{
+        footer{
                 color: white;
                 font-weight: bold;
                 display: block;
@@ -843,14 +738,14 @@ div .wall{
                 display: flex;
                 justify-content: center;
             }
-            ::placeholder { color: White;
+        ::placeholder { color: White;
                 font-size: 20px;
             }
-            .secondViewContainer{
+        .secondViewContainer{
                 display: flex;
                 flex-direction: column;
             }
-            .secondView .homePic{
+        .secondView .homePic{
                 width: 500px;
                 height: 400px;
                 display: block;
@@ -858,56 +753,59 @@ div .wall{
                 left: 100px;
                 top: 95px;
                 }
-            .userName{
+        .userName{
                 width: 290px;
                 padding: 10px;
                 margin-bottom: 8px;
                 margin-left: 600px;
                 height: 42px;
             }
-            .userEmail{
+        .userEmail{
                 width: 290px;
                 padding: 10px;
                 margin-bottom: 8px;
                 margin-left: 600px;
                 height: 42px;
             }
-            .createPassword{
+        .createPassword{
                 width: 290px;
                 padding: 10px;
                 margin-bottom: 18px;
                 margin-left: 600px;
                 height: 42px;
             }
-            .userRegistration {
+        .userRegistration {
                 width: 290px;
                 padding: 8px;
                 font-size: 18px;
                 margin-left: 600px;
             }
-            .registerlogIn{
+        .registerlogIn{
                 width: 290px;
                 padding: 8px;
                 font-size: 18px;
                 margin-left: 600px;
             }
-            header img{
+        header img{
                 width: 60px;
                 height: 60px;
             }
-            #bForm{
+        #bForm{
                 min-width: 100px;
                 font-size: 22px;
             }
-            .logOutWall{
+        .logOutWall{
                 font-size: 22px;
                 margin-right: 20px;
             }
-            #publication{
-                width: 450px;
+            .publication-area{
+                width: 40%;
+            }
+        #publication{
+                width: 100%;
                 height: 200px;
             }
-            #publish{
+        #publish{
             margin-top: 18px;
             width: 200px;
             padding: 8px;
@@ -916,38 +814,38 @@ div .wall{
             .questionsB{
             width: 600px;
             }
-            .send{
+        .send{
                 width: 200px;
                 padding: 15px;
                 margin-top: 20px;
                 font-size: 18px;
             }
-            .backToWall{
+        .backToWall{
                 width: 60px;
                 font-size: 22px;
                 margin-right: 20px;
             } 
-            .post{
-                min-width: 450px;
+        .post{
+                width: 40%;
                 min-height: 200px;
             }
-            .post-header img{
+        .post-header img{
             width: 55px;
             height: 55px;
             margin: 15px;
             }
-            .user-info{
+        .user-info{
                 height: 30px;
                 font-size: 23px;
                 margin-bottom: 3px;
             }
-            .comment{
+        .comment{
                 color: black;
                 height: 19px;
                 z-index: 3;
                 margin-left: 10px;
             }
-            .date{
+        .date{
                 color: gray;
                 font-size: small;
                 margin: 0;
@@ -955,62 +853,62 @@ div .wall{
                 z-index: 2;
                 margin-left: 100px;
             }
-            .btn-edit img{
+        .btn-edit img{
                 width: 30px;
                 height: 30px;
                 border-radius: 0;
                 display: flex;
                 pointer-events: none;
             }
-            .btn-edit{
-                margin-left: 380px;
+        .btn-edit{
+                margin-left: 87%;
                 width: 32px;
                 height: 32px;
                 border: none;
             }
-            .count{
-                margin-left: 350px;
+        .count{
+                margin-left: 80%;
             }
-            .btn-delete img{
+        .btn-delete img{
                 width: 22px;
                 height: 22px;
                 border-radius: 0;
                 display: flex;
                 pointer-events: none;
             }
-            .btn-delete{
+        .btn-delete{
                 width: 22px;
                 height: 22px;
                 border: none;
                 margin-top: 40px;
                 margin-left: 12px;
             }
-            .btn-like img{
+        .btn-like img{
                 width: 22px;
                 height: 22px;
                 border-radius: 0;
                 display: flex;
             }
-            .btn-like{
+        .btn-like{
                 max-width: 22px;
                 max-height: 22px;
                 border: none;
                 background-color: #ffffff;
             }
-            .liked{
+        .liked{
                 background: purple;
             }
-            .middleSection{
+        .middleSection{
                 margin-top: 30px;
             }
-            .editing-area{
+        .editing-area{
                 width: 270px;
                 height: 100px;
                 margin: 0;
                 margin-bottom: -50px;
                 font-size: 18px;
             }
-            .save-changes-btn{
+        .save-changes-btn{
                 margin-left: 125px;
                 background: #4cc9f0;
                 color: #25034c;

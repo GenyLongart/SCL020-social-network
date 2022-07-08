@@ -1,10 +1,11 @@
-import { signingInWithgoogle, logIn } from '../firebase-doc/authentication.js';
-import { getRedirectResult, auth } from '../firebase-doc/firebase.js';
-import { changeRoute } from '../lib/router.js';
+import { signingInWithgoogle, logIn } from "../firebase-doc/authentication.js";
+import { getRedirectResult, auth } from "../firebase-doc/firebase.js";
+import { changeRoute } from "../lib/router.js";
 
 export const home = () => {
-  const viewHome = // html
-  `
+  const viewHome =
+    // html
+    `
     <div class="firstView">
     <img class = "homePic" src = "Social-images/homePic.png">
     <div class = "logo">
@@ -23,32 +24,33 @@ export const home = () => {
     </div>
     </div>
     `;
-  const container = document.createElement('div');
+  const container = document.createElement("div");
   container.innerHTML = viewHome;
-  container.className = 'firstViewContainer';
-  const googleButton = container.querySelector('.loginGoogle');
-  googleButton.addEventListener('click', async (e) => {
+  container.className = "firstViewContainer";
+  const googleButton = container.querySelector(".loginGoogle");
+  googleButton.addEventListener("click", async (e) => {
     const user = await signingInWithgoogle();
     if (user) {
-      changeRoute('#/wall');
-    } else (console.log('error'));
-  })
+      changeRoute("#/wall");
+    } else console.log("error");
+  });
   const inWithGoogle = async () => {
     const redirected = await getRedirectResult(auth);
-    if (redirected) { changeRoute('#/wall'); }
+    if (redirected) {
+      changeRoute("#/wall");
+    }
   };
   inWithGoogle();
 
-  const loginButton = container.querySelector('.loginButton');
+  const loginButton = container.querySelector(".loginButton");
 
-  loginButton.addEventListener('click', async () => {
-    const loginEmail = container.querySelector('.email').value;
-    const userPassword = container.querySelector('.password').value;
+  loginButton.addEventListener("click", async () => {
+    const loginEmail = container.querySelector(".email").value;
+    const userPassword = container.querySelector(".password").value;
     const userIn = await logIn(loginEmail, userPassword);
-    //console.log(userIn)
     if (userIn) {
-      changeRoute('#/wall');
-    } else (console.log('error'));
-  })
+      changeRoute("#/wall");
+    } else console.log("error");
+  });
   return container;
 };

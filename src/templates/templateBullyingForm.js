@@ -1,5 +1,6 @@
 export const bForm = () => {
-    const bInformation = //html
+  const bInformation =
+    //html
     `
   <div class="bullyingView">
         <header class = "headerBullying">
@@ -17,8 +18,8 @@ export const bForm = () => {
        <button class="send" id="send" type="submit">ENVIAR</button>
         </div>
         `;
-      const container = document.createElement('div');
-      container.innerHTML = bInformation;
-      container.className = 'bullyingViewContainer';
-    return container;
-  };
+  const container = document.createElement("div");
+  container.innerHTML = bInformation;
+  container.className = "bullyingViewContainer";
+  return container;
+};

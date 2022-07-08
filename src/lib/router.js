@@ -4,18 +4,9 @@ import { wall } from '../templates/templateWall.js';
 import { bForm } from '../templates/templateBullyingForm.js';
 
 export const changeRoute = (hash) => {
-  console.log(hash)
-  if ( hash === '#/') {
-    return showTemplates(hash)
-  } else if ( hash === '#/register' ) {
-    return showTemplates(hash)
-  } else if ( hash === '#/wall') {
-    return showTemplates(hash)
-  } else if ( hash === '#/bullyingForm') {
-    return showTemplates(hash)
-  } else {
-    return showTemplates(hash)
-}
+  window.location.hash = hash;
+  //window.history.replaceState({}, "", window.location.origin + hash); //reemplaza el estado del hash en el historial del navegador
+  return showTemplates(hash)
 }
 
 const showTemplates = (hash) => {
@@ -35,6 +26,6 @@ const showTemplates = (hash) => {
     containerRoot.appendChild(bForm());
       break;
     default:
-    containerRoot.innerHTML = `<h2>Esta página no existe</h2>`
+    containerRoot.innerHTML = `<h2>Esta página no existe</h2>`;
   }
 }
