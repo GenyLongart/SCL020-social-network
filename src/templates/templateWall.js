@@ -1,13 +1,20 @@
 import {
   creatingNewPost,
-  updatingPublications, editingPublication,
+  updatingPublications,
+  editingPublication,
   deletingPublication,
   getPublication,
   editingComment,
   likingPub,
 } from "../firebase-doc/firestore.js";
 import { logOut } from "../firebase-doc/authentication.js";
-import { auth, getDocs, collection, db, updateDoc } from "../firebase-doc/firebase.js";
+import {
+  auth,
+  getDocs,
+  collection,
+  db,
+  updateDoc,
+} from "../firebase-doc/firebase.js";
 import { changeRoute } from "../lib/router.js";
 
 export const wall = () => {
@@ -37,14 +44,17 @@ export const wall = () => {
     const commentContainer = container.querySelector("#publication");
     let comment = commentContainer.value;
     if (comment) {
-    try {
-      await creatingNewPost(comment);
-      commentContainer.value = "";
-      console.log("prueba");
-      return creatingNewPost;
-    } catch (error) {
-      return console.log("error");
-    } } else {alert('Por favor ingrese su comentario.')}
+      try {
+        await creatingNewPost(comment);
+        commentContainer.value = "";
+        console.log("prueba");
+        return creatingNewPost;
+      } catch (error) {
+        return console.log("error");
+      }
+    } else {
+      alert("Por favor ingrese su comentario.");
+    }
   });
 
   const allPublications = async () => {
@@ -72,7 +82,9 @@ export const wall = () => {
         <button class="btn-delete" data-id="${doc.id}">
           <img src = "../Social-Images/delete-btn.png">
           </button>
-        <span id= "count" class = "count" data-id="${doc.id}">${pub.LikesSum}</span>
+        <span id= "count" class = "count" data-id="${doc.id}">${
+          pub.LikesSum
+        }</span>
         <button class="btn-like" data-id="${doc.id}">
         <img src = "../Social-Images/like-icon.png">
         </button>
@@ -88,52 +100,15 @@ export const wall = () => {
         });
       });
 
-      //Crear un campo vacio en el html que este al lado del botón para que alli se muestre la suma de los likes
-      //Enviar un array vacío a Firebase donde se contenga la suma de los likes de la publicación
-      //Al hacer click en el botón de like, sumar 1 al array vacío
-     //Que los usuarios solo puedan dar 1 like por publicación
-    //Que al presionar nuevamente el botón se le pueda quitar el like a la publicación
-//Que el botón cambie de color cuando se le haya dado like a la publicación
-//Que vuelva a su color normal si le quitan el like
-//Que la suma de likes se muestre en la interfaz al lado del botón
+      const btnLikes = container.querySelectorAll(".btn-like");
+      let count = container.querySelectorAll(".count");
+      btnLikes.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+          const postId = e.target.dataset.id;
+          await likingPub(postId, auth.currentUser.uid);
+        });
+      });
 
-// const btnLikes = container.querySelectorAll('.btn-like');
-// let count = container.querySelectorAll(".count");
-// let clicked = false;
-// btnLikes.forEach((btn) => {
-//   // console.log(btn.dataset.id);
-//   btn.addEventListener("click", (e) => {
-//   count.forEach((coun) =>{
-//     if ( btn.dataset.id === coun.dataset.id ){
-
-//     if (!clicked) {
-//     clicked = true;
-//     coun.textContent++;
-//     } else {
-//     clicked = false;
-//     coun.textContent--;
-//     if ( coun.textContent === "0" ){
-//       coun.textContent = "";
-//       console.log ("hola");
-//     }
-//     }
-//   }
-//   });
-// })
-// })
-
-const btnLikes = container.querySelectorAll('.btn-like');
- let count = container.querySelectorAll(".count");
- btnLikes.forEach((btn) => {
-  btn.addEventListener("click", async (e) => {
-    const postId = e.target.dataset.id;
-    await likingPub(postId, auth.currentUser.uid);
-  });
-
- });
-
-
-    
       const btnEdit = container.querySelectorAll(".btn-edit");
       btnEdit.forEach((btn) => {
         btn.addEventListener("click", async (e) => {
@@ -142,26 +117,25 @@ const btnLikes = container.querySelectorAll('.btn-like');
           console.log(publiInfo);
 
           const editingAreaEl = document.createElement("textarea");
-          editingAreaEl.classList.add('editing-area');
+          editingAreaEl.classList.add("editing-area");
           editingAreaEl.value = publiInfo.Comment;
           const postEl = btn.closest(".post");
           const paragraphEl = postEl.querySelector(".comment");
           console.log(paragraphEl);
-          const middleSection = postEl.querySelector('.middleSection');
+          const middleSection = postEl.querySelector(".middleSection");
           paragraphEl.classList.add("hide");
           middleSection.appendChild(editingAreaEl);
-          const saveChanges = document.createElement('button');
-          saveChanges.classList.add('save-changes-btn');
-          saveChanges.textContent = 'Guardar';
+          const saveChanges = document.createElement("button");
+          saveChanges.classList.add("save-changes-btn");
+          saveChanges.textContent = "Guardar";
           middleSection.appendChild(saveChanges);
-          saveChanges.addEventListener('click', async () => {
-           const newComment = editingAreaEl.value;
-           console.log()
+          saveChanges.addEventListener("click", async () => {
+            const newComment = editingAreaEl.value;
+            console.log();
             await editingPublication(e.target.dataset.id, newComment);
             console.log("prueba");
-        })
+          });
         });
-        
       });
     });
     return allPublications;
