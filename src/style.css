@@ -242,9 +242,8 @@ p{
     width: 100vw;
 }
 .bullyingViewContainer{
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    outline: 10px solid green;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -255,8 +254,6 @@ p{
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
-    width: 100vw;
 }
 .bullyingView p{
 justify-content: flex-start;
@@ -305,10 +302,12 @@ header img{
 .questionsB{
     background-color: lightgrey;
     resize: none;
+    width: 60%;
+    min-height: 150px;
 }
 .q{
     display: flex;
-    width: 100%;
+    width: 85%;
     justify-content: flex-start;
     font-weight: bold;
 }
@@ -316,6 +315,7 @@ header img{
     width: 150px;
     padding: 10px;
     margin-top: 10px;
+    margin-bottom: 30px;
     color: #25034c;
     display: flex;
     justify-content: center;
@@ -326,8 +326,6 @@ header img{
     border-radius: 10px;
     background-color: #4cc9f0;
     transition: background-color 0.1s;
-    
-
 }
 .send:hover {
     background-color:#09fada;
@@ -339,7 +337,7 @@ header img{
     align-items: center;
     flex-direction: column;
 }
-textarea{
+/* textarea{
     width: 80%;
     height: 150px;
     margin-top: 20px;
@@ -347,7 +345,7 @@ textarea{
     text-align: left;
     border-radius: 10px;
     padding: 10px;
-}
+} */
 .publish{
     width: 150px;
     padding: 10px;
@@ -399,6 +397,12 @@ div .wall{
 }
 #publication{
     width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    border: none;
+    text-align: left;
+    border-radius: 10px;
+    padding: 10px;
 }
 .post-header{
     padding: 0;
@@ -917,5 +921,14 @@ div .wall{
                 border: none;
                 width: 70px;
                 height: 18px;
+            }
+            .questionB{
+                width: 60%;
+            }
+            .q{
+                width: 50%;
+            }
+            .backToWall{
+                margin-right: 30px;
             }
         }

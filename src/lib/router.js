@@ -25,6 +25,9 @@ const showTemplates = (hash) => {
     case '#/bullyingForm':
     containerRoot.appendChild(bForm());
       break;
+    case '':
+    containerRoot.appendChild(home());
+      break;
     default:
     containerRoot.innerHTML = `<h2>Esta página no existe</h2>`;
   }
