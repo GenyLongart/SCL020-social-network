@@ -78,9 +78,6 @@ const likingPub = async (id, UserId) => {
 // Deleting publication
 const deletingPublication = (id) => deleteDoc(doc(db, "Publications", id));
 
-/*const editingPublication = async (id, editPublication) => {
-     await updateDoc(doc(db, 'Publications', id), { Comment: editPublication });
-};*/
 const editingPublication = async (id, Comment) => {
   const postRef = doc(db, "Publications", id);
   await updateDoc(postRef, {
