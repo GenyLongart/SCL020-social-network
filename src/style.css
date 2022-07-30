@@ -1,0 +1,934 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+body{
+    background-color: #25034c;
+    height: 100%;
+    width: auto;
+}
+.firstView .homePic{
+    display: none;
+}
+.secondView .homePic{
+    display: none;
+}
+footer{
+    display: none;
+}
+.firstViewContainer{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.firstView{
+    background: #25034c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.logo{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+}
+.logo img{
+    width: 180px;
+    height: 180px;
+
+}
+.currentUserData{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+}
+::placeholder { color: White;
+font-size: 15px;
+}
+
+.email{
+    width: 225px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4b309c;
+    color: white;
+    border: none;
+}
+.password{
+    width: 225px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: #4b309c;
+    border: none;
+}
+.loginButton{
+    width: 225px;
+    padding: 10px;
+    color: #25034c;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4cc9f0;
+    transition: background-color 0.1s;
+
+}
+.loginButton:hover {
+    background-color:#09fada;
+}  
+.register{
+    width: 225px;
+    padding: 10px;
+    color: #25034c;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4cc9f0;
+    transition: background-color 0.1s;
+
+}
+.register:hover {
+    background-color:#09fada;
+  }
+.loginGoogle{
+    width: 225px;
+    padding: 10px;
+    color: #25034c;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4cc9f0;
+    transition: background-color 0.1s;
+
+}
+.loginGoogle:hover {
+    background-color:#09fada;
+}
+h3{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 18px;
+    color: white; 
+}
+p{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    font-size: 15px;
+    color: white;
+}
+.registerViewContainer{
+    height: 100vh;
+    width: 100vw;
+    outline: 10px solid green;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.secondView{
+    background: #25034c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+.registerChoice .question{
+    margin-top: 10px;
+}
+.userName{
+    width: 225px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4b309c;
+    color: white;
+    border: none;
+}
+.userEmail{
+    width: 225px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4b309c;
+    color: white;
+    border: none;
+}
+.createPassword{
+    width: 225px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #4b309c;
+    color: white;
+    border: none;
+}
+.userRegistration {
+    width: 225px;
+    padding: 10px;
+    color: #25034c;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4cc9f0;
+    transition: background-color 0.1s;
+
+}
+.userRegistration:hover {
+    background-color:#09fada;
+  }
+.registerlogIn{
+    width: 225px;
+    padding: 10px;
+    color: #25034c;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4cc9f0;
+    transition: background-color 0.1s;
+
+}
+.registerlogIn:hover {
+    background-color:#09fada;
+}
+#registrationForm{
+    display: flex;
+    flex-direction: column;
+}
+.wallViewContainer{
+    height: 100%;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.wallView{
+    background:  #25034c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100vw;
+}
+.bullyingViewContainer{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.bullyingView{
+    background:  #25034c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.bullyingView p{
+justify-content: flex-start;
+}
+header {
+    background-color: #4b309c;
+    width: 100%;
+    height: 70px;
+    align-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header img{
+    width: 43px;
+    height: 43px;
+    display: flex;
+    justify-content: right;
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+.headerBullying{
+    background-color: #4b309c;
+    width: 100%;
+    height: 70px;
+    align-content: space-between;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.backToWall{
+    width: 60px;
+    color: white;
+    text-decoration: none;
+}
+.questionsForm{
+    text-align: justify;
+}
+#bForm{
+    min-width: 100px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+   
+}
+.questionsB{
+    background-color: lightgrey;
+    resize: none;
+    width: 60%;
+    min-height: 150px;
+}
+.q{
+    display: flex;
+    width: 85%;
+    justify-content: flex-start;
+    font-weight: bold;
+}
+.send{
+    width: 150px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #25034c;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4cc9f0;
+    transition: background-color 0.1s;
+}
+.send:hover {
+    background-color:#09fada;
+  }
+.publication-area{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* textarea{
+    width: 80%;
+    height: 150px;
+    margin-top: 20px;
+    border: none;
+    text-align: left;
+    border-radius: 10px;
+    padding: 10px;
+} */
+.publish{
+    width: 150px;
+    padding: 10px;
+    color: #25034c;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 13px;
+    border: none;
+    border-radius: 10px;
+    background-color: #4cc9f0;
+    margin-top: 20px;
+    transition: background-color 0.1s;
+
+}
+.publish:hover {
+    background-color:#09fada;
+}
+.logOutWall img{
+    width: 35px;
+    height: 35px;
+    border-radius: 0;
+    display: flex;
+}
+.logOutWall{
+    border: none;
+    background-color: #4b309c;
+    margin-right: 12px;
+}
+div .wall{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-size: cover;
+    margin-bottom: 18px;
+}
+.post{
+        border: 1px solid black;
+        width: 80%;
+        min-height: 150px;
+        border-radius: 10px;
+        margin-top: 20px;
+        background-color: white;
+        justify-content: left;
+        display: flex;
+        flex-direction: column;
+}
+#publication{
+    width: 100%;
+    height: 150px;
+    margin-top: 20px;
+    border: none;
+    text-align: left;
+    border-radius: 10px;
+    padding: 10px;
+}
+.post-header{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.post-header img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    z-index: 1;
+}
+.user-info{
+    color: #25034c;
+    font-weight: bold;
+    height: 21px;
+    font-size: 18px;
+    margin-bottom: 3px;
+}
+.comment{
+    color: black;
+    height: 19px;
+    z-index: 3;
+    margin-left: 10px;
+}
+.comment.hide{
+    display: none;
+
+}
+.date{
+    color: gray;
+    font-size: small;
+    margin: 0;
+    height: 14px;
+    z-index: 2;
+    margin-left: 50px;
+}
+.btn-edit img{
+    width: 15px;
+    height: 15px;
+    border-radius: 0;
+    display: flex;
+    pointer-events: none;
+}
+.btn-edit{
+    margin-left: 90%;
+    margin-top: -30px;
+    width: 16px;
+    height: 16px;
+    border: none;
+    background-color: white;
+}
+.btn-delete img{
+    width: 18px;
+    height: 18px;
+    border-radius: 0;
+    display: flex;
+    pointer-events: none;
+}
+.btn-delete{
+    width: 19px;
+    height: 19px;
+    border: none;
+    margin-top: 40px;
+    margin-left: 8px;
+    background-color: white;
+}
+.btn-like img{
+    width: 22px;
+    height: 22px;
+    border-radius: 0;
+    pointer-events: none;
+    display: flex;
+}
+.btn-like{
+    max-width: 22px;
+    max-height: 22px;
+    border: none;
+    background-color: #ffffff;
+}
+.count{
+    margin-left: 75%;
+}
+.liked{
+    background: purple;
+}
+.middleSection{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.editing-area{
+    width: 270px;
+    height: 100px;
+    margin: 0;
+    margin-bottom: -50px;
+    font-size: 15px;
+}
+.save-changes-btn{
+    background: #4cc9f0;
+    color: #25034c;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    width: 70px;
+    height: 18px;
+    margin-top: 10px;
+}
+.post-footer{
+    margin-bottom: 5px;
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+    .logo img{
+        width: 220px;
+        height: 220px;
+    
+    }
+    .email{
+        width: 350px;
+        margin-bottom: 25px;
+        height: 55px;
+        font-size: 25px;
+    }
+    .password{
+        width: 350px;
+        margin-bottom: 25px;
+        height: 55px;
+        font-size: 25px;
+    }
+    .loginButton{
+        width: 350px;
+        padding: 15px;
+        font-size: 22px;
+    }
+    .register{
+        width: 350px;
+        padding: 15px;
+        font-size: 22px;
+    }
+    .loginGoogle{
+        width: 350px;
+        padding: 15px;
+        font-size: 22px;
+    }
+    h3{
+        font-size: 25px;
+    }
+    p{
+        padding: 15px;
+        font-size: 18px;
+    }
+    ::placeholder { color: White;
+        font-size: 25px;
+    }
+    .userName{
+        width: 350px;
+        margin-bottom: 25px;
+        height: 55px;
+        font-size: 25px;
+    }
+    .userEmail{
+        width: 350px;
+        margin-bottom: 25px;
+        height: 55px;
+        font-size: 25px;
+    }
+    .createPassword{
+        width: 350px;
+        margin-bottom: 25px;
+        height: 55px;
+        font-size: 25px;
+    }
+    .userRegistration {
+        width: 350px;
+        font-size: 22px;
+        margin-top: 10px;
+    }
+    .registerlogIn{
+        width: 350px;
+        font-size: 22px;
+    }
+    header img{
+        width: 60px;
+        height: 60px;
+    }
+    #bForm{
+        min-width: 100px;
+        font-size: 22px;
+    }
+    .logOutWall{
+        font-size: 22px;
+        margin-right: 20px;
+    }
+    #publish{
+    width: 200px;
+    font-size: 18px;
+    margin-top: 15px;
+    }
+    .comment{
+     font-size: 22px;
+    }
+    .user-info{
+        font-size: 23px;
+    }
+    .date{
+        font-size: medium;
+    }
+    .post{
+        min-height: 180px;
+    }
+    .post-header img{
+        width: 50px;
+        height: 50px;
+    }
+    .middleSection{
+        margin-top: 20px;
+    }
+    .editing-area{
+        font-size: 22px;
+    }
+    .save-changes-btn{
+        margin-left: 0px;
+    }
+    .btn-edit{
+        width: 27px;
+        height: 27px;
+        margin-top: -40px;
+        margin-left: 495px;
+    }
+    .btn-edit img{
+        width: 27px;
+        height: 27px;
+    }
+    .btn-delete{
+        width: 27px;
+        height: 27px;
+    }
+    .btn-delete img{
+        width: 27px;
+        height: 27px;
+    }
+    .count{
+        margin-left: 82%;
+    }
+    .questionsB{
+    width: 600px;
+    }
+    .send{
+        width: 200px;
+        margin-top: 20px;
+        font-size: 18px;
+    }
+    .backToWall{
+        width: 60px;
+        font-size: 22px;
+        margin-right: 20px;
+    }
+    
+}
+    @media (min-width: 1024px){
+        #root{
+        width: 100%;
+        }
+        .firstViewContainer{
+            display: flex;
+            flex-direction: column;
+        }
+        .firstView .homePic{
+        width: 500px;
+        height: 400px;
+        display: block;
+        position: absolute;
+        left: 100px;
+        top: 95px;
+        }
+        .logo{
+            margin-top: 0px;
+            margin-bottom: 3px;
+        }
+        .logo img{
+            width: 170px;
+            height: 170px;
+            margin-left: 600px;
+            margin-bottom: 5px;
+            }
+        .email{
+                width: 290px;
+                padding: 10px;
+                margin-bottom: 15px;
+                margin-left: 600px;
+                height: 42px;
+            }
+        .password{
+                width: 290px;
+                padding: 10px;
+                margin-bottom: 15px;
+                margin-left: 600px;
+                height: 42px;
+            }
+        .loginButton{
+                width: 290px;
+                padding: 8px;
+                font-size: 18px;
+                margin-left: 600px;
+            }
+        .register{
+                width: 290px;
+                padding: 8px;
+                font-size: 18px;
+                margin-left: 600px;
+            }
+        .loginGoogle{
+                width: 290px;
+                padding: 8px;
+                font-size: 18px;
+                margin-left: 600px;
+            }
+        h3{
+                margin-left: 600px;
+            }
+        p{
+                padding: 5px;
+                font-size: 18px;
+            }
+        footer{
+                color: white;
+                font-weight: bold;
+                display: block;
+                background-color: #4b309c;
+                width: 100%;
+                height: 30px;
+                align-items: center;
+                display: flex;
+                justify-content: center;
+            }
+        ::placeholder { color: White;
+                font-size: 20px;
+            }
+        .secondViewContainer{
+                display: flex;
+                flex-direction: column;
+            }
+        .secondView .homePic{
+                width: 500px;
+                height: 400px;
+                display: block;
+                position: absolute;
+                left: 100px;
+                top: 95px;
+                }
+        .userName{
+                width: 290px;
+                padding: 10px;
+                margin-bottom: 8px;
+                margin-left: 600px;
+                height: 42px;
+            }
+        .userEmail{
+                width: 290px;
+                padding: 10px;
+                margin-bottom: 8px;
+                margin-left: 600px;
+                height: 42px;
+            }
+        .createPassword{
+                width: 290px;
+                padding: 10px;
+                margin-bottom: 18px;
+                margin-left: 600px;
+                height: 42px;
+            }
+        .userRegistration {
+                width: 290px;
+                padding: 8px;
+                font-size: 18px;
+                margin-left: 600px;
+            }
+        .registerlogIn{
+                width: 290px;
+                padding: 8px;
+                font-size: 18px;
+                margin-left: 600px;
+            }
+        header img{
+                width: 60px;
+                height: 60px;
+            }
+        #bForm{
+                min-width: 100px;
+                font-size: 22px;
+            }
+        .logOutWall{
+                font-size: 22px;
+                margin-right: 20px;
+            }
+            .publication-area{
+                width: 40%;
+            }
+        #publication{
+                width: 100%;
+                height: 200px;
+            }
+        #publish{
+            margin-top: 18px;
+            width: 200px;
+            padding: 8px;
+            font-size: 18px;
+            }
+            .questionsB{
+            width: 600px;
+            }
+        .send{
+                width: 200px;
+                padding: 15px;
+                margin-top: 20px;
+                font-size: 18px;
+            }
+        .backToWall{
+                width: 60px;
+                font-size: 22px;
+                margin-right: 20px;
+            } 
+        .post{
+                width: 40%;
+                min-height: 200px;
+            }
+        .post-header img{
+            width: 55px;
+            height: 55px;
+            margin: 15px;
+            }
+        .user-info{
+                height: 30px;
+                font-size: 23px;
+                margin-bottom: 3px;
+            }
+        .comment{
+                color: black;
+                height: 19px;
+                z-index: 3;
+                margin-left: 10px;
+            }
+        .date{
+                color: gray;
+                font-size: small;
+                margin: 0;
+                height: 14px;
+                z-index: 2;
+                margin-left: 100px;
+            }
+        .btn-edit img{
+                width: 30px;
+                height: 30px;
+                border-radius: 0;
+                display: flex;
+                pointer-events: none;
+            }
+        .btn-edit{
+                margin-left: 87%;
+                width: 32px;
+                height: 32px;
+                border: none;
+            }
+        .count{
+                margin-left: 80%;
+            }
+        .btn-delete img{
+                width: 22px;
+                height: 22px;
+                border-radius: 0;
+                display: flex;
+                pointer-events: none;
+            }
+        .btn-delete{
+                width: 22px;
+                height: 22px;
+                border: none;
+                margin-top: 40px;
+                margin-left: 12px;
+            }
+        .btn-like img{
+                width: 22px;
+                height: 22px;
+                border-radius: 0;
+                display: flex;
+            }
+        .btn-like{
+                max-width: 22px;
+                max-height: 22px;
+                border: none;
+                background-color: #ffffff;
+            }
+        .liked{
+                background: purple;
+            }
+        .middleSection{
+                margin-top: 30px;
+            }
+        .editing-area{
+                width: 270px;
+                height: 100px;
+                margin: 0;
+                margin-bottom: -50px;
+                font-size: 18px;
+            }
+        .save-changes-btn{
+                margin-left: 125px;
+                background: #4cc9f0;
+                color: #25034c;
+                border-radius: 5px;
+                font-weight: bold;
+                border: none;
+                width: 70px;
+                height: 18px;
+            }
+            .questionB{
+                width: 60%;
+            }
+            .q{
+                width: 50%;
+            }
+            .backToWall{
+                margin-right: 30px;
+            }
+        }
